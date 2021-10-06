@@ -1,0 +1,39 @@
+
+const API_PORT = 3000;
+
+var config = {
+    database: '',
+    //database: 'mongodb://angelalert:L3g3nd12@devices.angelasp.co.za:27017/angel_alert',
+
+    secret: 'zUbDjhQdXmrWlscbvlktnrfwlsaikdfjiu9jvSw7nw',
+
+    //clickatellApiKey: 'GSIT3IXYTyqzVjdjR1Wm0Q==', // Terry
+    clickatellApiKeyTwoWay: '6tuHX17STm6oTNT6U6rWUg==',
+    clickatellNumberTwoWay: '32154',
+
+    clickatellApiKeyOneWay: 'QSSDSAWRSTGo_RddcLo2nA==',
+
+    API_PORT: API_PORT,
+    SOCKET_PORT: 9007,
+
+    hmacKey: "fufVfUa9jvMLv7iKMCzk",
+
+    baseUrl: 'http://localhost:3000',
+
+    auraClientId: '7Vjmx9A4ZvhjNENA51P86tW5ZhkxUBZw',
+    auraClientSecret: 'oDnPWtVE_Y_Ov8md9URC-wdeHaLkrsokqMWDLLkCew9FIIuy96IYc0HTioegmMre',
+    auraRequestType: 'ANGEL_TEST',
+    auraBaseUrl: 'https://staging-panic.aura.services/panic-api/',
+};
+
+if (process.env.NODE_ENV == 'prod') {
+    config.database = '
+
+';
+    config.baseUrl = 'https://devices.angelasp.co.za';
+
+    //config.auraBaseUrl = 'https://panic.aura.services/panic-api/';
+    //config.auraRequestType = 'ANGEL';
+}
+
+module.exports = config;
